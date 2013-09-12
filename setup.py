@@ -37,7 +37,8 @@ setup(name='ftw.permissionmanager',
       install_requires=[
         'setuptools',
         'collective.monkeypatcher',
-        'Products.CMFPlone >= 4.3b'
+        'Products.CMFPlone >= 4.0',
+        'plone.app.workflow >= 2.1.0',
         # -*- Extra requirements: -*-
         ],
       tests_require=tests_require,

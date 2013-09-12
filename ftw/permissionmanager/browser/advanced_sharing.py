@@ -53,7 +53,12 @@ class AdvancedSharingView(BrowserView):
                 'query': '/'.join(self.context.getPhysicalPath()),
                 'depth': 0,
             },
-        })[0]
+        })
+        try:
+            rootBrain = rootBrain[0]
+        except IndexError:
+            rootBrain = self.context
+
         items, _index = self.brainsToItems([rootBrain])
         return items
 
@@ -68,11 +73,20 @@ class AdvancedSharingView(BrowserView):
         for brain in brains:
             index += 1
             # make item
-            absoluteDepth = len(brain.getPath().split('/'))
+            try:
+                absoluteDepth = len(brain.getPath().split('/'))
+            except AttributeError:
+                physicalPath = brain.getPhysicalPath()
+                absoluteDepth = len(physicalPath)
+                objPath = '/'.join(physicalPath)
             aquired = getattr(brain, 'isLocalRoleAcquired', True)
+            try:
+                brain_title = brain.Title()
+            except TypeError:
+                brain_title = brain.Title
             item = {
-                    'title': brain.Title,
-                    'path': brain.getPath(),
+                    'title': brain_title,
+                    'path': getattr(brain, 'getPath', lambda: objPath)(),
                     'depth': absoluteDepth - contextDepth,
                     'cssClass': cssClass,
                     'rowid': 'node-%i' % index,
@@ -82,7 +96,11 @@ class AdvancedSharingView(BrowserView):
             for role in roleIds:
                 item[role] = []
             if brain.get_local_roles:
-                for user, roles in brain.get_local_roles:
+                try:
+                    local_roles = brain.get_local_roles()
+                except TypeError:
+                    local_roles = brain.get_local_roles
+                for user, roles in local_roles:
                     if not self.user_selected or user == self.user:
                         for role in roles:
                             if role in item:
@@ -90,7 +108,7 @@ class AdvancedSharingView(BrowserView):
             items.append(item)
             # children
             query = dict(path={
-                    'query': brain.getPath(),
+                    'query': getattr(brain, 'getPath', lambda: objPath)(),
                     'depth': 1,
                 },
                 sort_on = 'getObjPositionInParent', )
