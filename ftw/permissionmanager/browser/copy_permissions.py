@@ -90,7 +90,7 @@ class CopyUserPermissionsView(BrowserView):
                 if user == self.source_user:
                     obj.manage_setLocalRoles(self.target_user, roles)
         IStatusMessage(self.request).addStatusMessage(
-            _(u'Die Berechtigungen wurden kopiert'), type='info')
+            _(u'The permissions have been copied'), type='info')
 
         #self.context.restrictedTraverse('@@update_security')()
         self.context.reindexObjectSecurity()
