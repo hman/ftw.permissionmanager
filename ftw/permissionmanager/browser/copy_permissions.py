@@ -45,6 +45,8 @@ class CopyUserPermissionsView(BrowserView):
         for userinfo in users:
             userid = userinfo['userid']
             user = self.context.acl_users.getUserById(userid)
+            if not user:
+                continue
             if userid not in userids:
                 results.append(dict(id=userid,
                                     title=user.getProperty(

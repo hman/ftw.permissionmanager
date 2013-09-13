@@ -46,6 +46,8 @@ class RemoveUserPermissionsView(SharingView):
         for userinfo in users:
             userid = userinfo['userid']
             user = self.context.acl_users.getUserById(userid)
+            if not user:
+                continue
             results.append(dict(id = userid,
                              title = user.getProperty(
                                  'fullname') or user.getId() or userid,
