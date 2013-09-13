@@ -121,7 +121,7 @@ class ImportExportPermissionsView(BrowserView):
                 rows_imported += 1
         IStatusMessage(self.request).addStatusMessage(
             _(
-                u'${rows_imported} have been set.',
+                u'${rows_imported} permissions have been set.',
                 mapping=dict(rows_imported=rows_imported)),
             type='info')
 

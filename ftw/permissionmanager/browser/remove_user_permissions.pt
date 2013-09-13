@@ -61,7 +61,7 @@
                     <tr>
                         <th i18n:translate="label_id">ID</th>
                         <th i18n:translate="label_title">Title</th>
-                        <th i18n:translate="label_typ">Typ</th>
+                        <th i18n:translate="label_typ">Type</th>
                     </tr>
                 </thead>
                 <tbody>
