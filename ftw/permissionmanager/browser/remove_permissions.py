@@ -28,7 +28,7 @@ class RemoveUserPermissionsView(SharingView):
             self.removePermissions()
             IStatusMessage(self.request).addStatusMessage(
                 _(
-                    u'Die Berechtigungen wurden erfolgreich entfernt.'),
+                    u'The permissions were successfully removed.'),
                     type='info')
             return self.request.RESPONSE.redirect('@@permission_manager')
         return self.template()

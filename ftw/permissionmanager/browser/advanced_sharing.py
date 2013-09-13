@@ -135,7 +135,7 @@ class AdvancedSharingView(BrowserView):
                             userGroupMap[user] = {
                                 'id': user,
                                 'name': user,
-                                'type': 'Geloeschter Benutzer',
+                                'type': 'Deleted User',
                             }
         # make a list
         userGroupList = userGroupMap.values()
@@ -159,7 +159,7 @@ class AdvancedSharingView(BrowserView):
         item = {
                 'id': id_,
                 'name': user.getProperty('fullname'),
-                'type': 'Benutzer',
+                'type': 'User',
         }
         return item
 
@@ -170,6 +170,6 @@ class AdvancedSharingView(BrowserView):
         item = {
                 'id': id_,
                 'name': group.getGroupTitleOrName(),
-                'type': 'Gruppe',
+                'type': 'Group',
         }
         return item

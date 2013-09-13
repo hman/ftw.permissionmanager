@@ -121,7 +121,7 @@ class ImportExportPermissionsView(BrowserView):
                 rows_imported += 1
         IStatusMessage(self.request).addStatusMessage(
             _(
-                u'Es wurden ${rows_imported} Berechtigungen gesetzt.',
+                u'${rows_imported} have been set.',
                 mapping=dict(rows_imported=rows_imported)),
             type='info')
 
@@ -133,7 +133,7 @@ class ImportExportPermissionsView(BrowserView):
         except (AttributeError, KeyError):
             IStatusMessage(self.request).addStatusMessage(
                 _(
-                    u'Objekt konnte nicht gefunden werden: ${path}',
+                    u'Object could not be found: ${path}',
                     mapping=dict(path=row['Path'])),
                 type='error')
             return

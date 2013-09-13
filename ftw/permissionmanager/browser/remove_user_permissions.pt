@@ -95,7 +95,7 @@
                 <a tal:attributes="href string:${here/absolute_url}/@@remove_user_permissions?user=${view/user}&amp;confirmed=1"
                     class="context" i18n:translate="label_yes_delete">Yes, delete</a>
                 <a tal:attributes="href string:${here/absolute_url}/@@remove_user_permissions"
-                    class="standalone" i18n:translate="label_no">No, abord</a>
+                    class="standalone" i18n:translate="label_no">No, abort</a>
             </p>
         </tal:user_selected>
 

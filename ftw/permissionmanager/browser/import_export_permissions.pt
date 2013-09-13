@@ -40,7 +40,7 @@
 
             <p>
                 <input type="checkbox" name="structure_only" id="structure_only" tal:attributes="checked view/structure_only" />
-                <label for="structure_only" i18n:translate="label_export_structure_only">Nur Struktur exportieren</label>
+                <label for="structure_only" i18n:translate="label_export_structure_only">Export structure only</label>
             </p>
             <p>
               <select name="select_encoding">

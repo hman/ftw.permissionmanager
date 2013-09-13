@@ -38,7 +38,7 @@
 
             <dt>
                 <a href="" i18n:translate="label_copy_permissions"
-                        tal:attributes="href string:${here/absolute_url}/@@copy_user_permissions">Berechtigungen kopieren</a>
+                        tal:attributes="href string:${here/absolute_url}/@@copy_user_permissions">Copy permissions</a>
             </dt>
             <dd i18n:translate="help_copy_permissions">
                 Copy all permissions of a user in this area
@@ -46,7 +46,7 @@
 
             <dt>
                 <a href="" i18n:translate="label_import_export_permissions"
-                        tal:attributes="href string:${here/absolute_url}/@@import_export_permissions">Import / Export von Berechtigungen</a>
+                        tal:attributes="href string:${here/absolute_url}/@@import_export_permissions">Import / Export permissions</a>
             </dt>
             <dd i18n:translate="help_import_export_permissions">
                 Export permissions as CSV file, edit with Excel or OpenOffice and import the new permissions

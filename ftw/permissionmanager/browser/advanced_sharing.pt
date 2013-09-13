@@ -36,7 +36,7 @@
             A red border means the permissions will no be inherited.
         </p>
 
-        <input type="button" class="standalone" value="Struktur aufklappen" i18n:attributes="value label_show_structure"
+        <input type="button" class="standalone" value="Expand structure" i18n:attributes="value label_show_structure"
                 onclick="jq('#permissionListingTable').find('tr.collapsed, tr.parent').show().expand()"/>
         <br/>
         <br/>
