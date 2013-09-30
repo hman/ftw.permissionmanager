@@ -34,7 +34,7 @@
             name="permission_manager"
             for="*"
             class=".permissionmanager.PermissionManager"
-            permission="zope2.View"
+            permission="plone.DelegateRoles"
             template="permission_manager.pt"
             />
 
@@ -42,7 +42,7 @@
             name="advanced-sharing"
             for="*"
             class=".advanced_sharing.AdvancedSharingView"
-            permission="zope2.View"
+            permission="plone.DelegateRoles"
             template="advanced_sharing.pt"
             />
 
