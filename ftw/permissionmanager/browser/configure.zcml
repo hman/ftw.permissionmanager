@@ -18,6 +18,7 @@
             for="*"
             layer="ftw.permissionmanager.interfaces.IFtwPermissioneManager"
             class=".sharing.SharingView"
+            template="sharing.pt"
             permission="plone.DelegateRoles"
             />
 

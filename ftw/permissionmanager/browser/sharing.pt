@@ -19,7 +19,13 @@
                 $this = jq(this);
                 $this.prepOverlay({
                     subtype:'ajax',
-                    urlmatch:'$',urlreplace:' .authorsInformation > *'
+                    formselector:'form[name="feedback_form"]',
+                    filter:'#content>*',
+                    afterpost: function(html, data){
+                      if(jQuery('div.field.error', html).length === 0) {
+                        data.overlay().close();
+                      }
+                    }
                 });
                 //trigger click event
                $this.trigger('click');
